@@ -1,0 +1,126 @@
+
+html{
+ font-size: 18px!important;
+ font-family: 'Lato', sans-serif !important;
+}
+a{
+    text-decoration: none;
+}
+
+.wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+ }
+ .main{
+     margin: 0 auto;
+ }
+ .mainNav{
+     background: black;
+     display: block;
+ }
+.navList {
+    display: flex;
+    flex-wrap: wrap;
+}
+.navList li {
+    padding: 1.6rem 0;
+}
+
+.navLink {
+    text-transform: uppercase;
+    color: white;
+    padding: 1.5rem;
+    background: black;
+}
+.navLink:hover{
+    background: white;
+    color: black;
+}
+.home {
+    margin: 4rem auto;
+}
+.home h1{
+    font-size: 4rem;
+}
+.searchBox{
+    margin: 1.3rem auto;
+    text-align: center;
+    width: 80%;
+}
+.searchInput {
+    padding: .7rem;
+    font-size: 1.3rem;
+}
+
+.flagList{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.singleCountry{
+    display: flex;
+    flex-flow: column wrap;
+    padding: 2rem;
+    flex: 1;
+}
+.singleCountry a{
+    margin: 0 auto;
+}
+.singleCountry:hover{
+    background: #d7d7d7;
+}
+.deleteBtn{
+    justify-self: center;
+    align-self: center;
+    cursor: pointer;
+}
+.countryName{
+    margin: .5rem auto;
+    text-transform: uppercase;
+}
+.countryLogo{
+    width: 15rem;
+    height: 10rem;
+    margin: 0 auto;
+}
+
+.selectBox{
+    margin: 1rem auto;
+    width: 80%;
+    text-align: center;
+}
+.selectRegionInput{
+    font-size: 1.3rem;
+}
+
+/*flag details component*/
+
+.detailsFlagBox{
+    margin-top: 2rem;
+    display: flex;
+}
+
+.flagImgBox{
+    margin-right: 2rem;
+}
+
+.flagImg{
+    width:20rem;
+}
+
+.infoDetail{
+    margin-top:.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1.5rem;
+    grid-gap: 2rem;
+    border-bottom: 1px dotted #d7d7d7;
+}
+.label{
+    text-transform: uppercase;
+    color: blue;
+
+}
