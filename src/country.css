@@ -6,17 +6,14 @@ html{
 a{
     text-decoration: none;
 }
-
 .wrapper {
     display: flex;
     flex-flow: column nowrap;
- }
- .main{
-     margin: 0 auto;
+    max-width: 100vw;
  }
  .mainNav{
+
      background: black;
-     display: block;
  }
 .navList {
     display: flex;
@@ -37,9 +34,11 @@ a{
     color: black;
 }
 .home {
+    text-align: center;
     margin: 4rem auto;
 }
 .home h1{
+    margin: 2rem 0 ;
     font-size: 4rem;
 }
 .searchBox{
@@ -50,6 +49,15 @@ a{
 .searchInput {
     padding: .7rem;
     font-size: 1.3rem;
+}
+
+.main{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+.flagImg{
+    margin: auto;
 }
 
 .flagList{
@@ -101,10 +109,7 @@ a{
 .detailsFlagBox{
     margin-top: 2rem;
     display: flex;
-}
-
-.flagImgBox{
-    margin-right: 2rem;
+    flex-flow: column wrap;
 }
 
 .flagImg{
@@ -112,15 +117,72 @@ a{
 }
 
 .infoDetail{
-    margin-top:.5rem;
+    margin: .5rem 0;
+    padding: .5rem 0;
+    border-bottom: 1px dotted rgb(209, 209, 209);
+}
+.infoWrapper{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 1.5rem;
     grid-gap: 2rem;
-    border-bottom: 1px dotted #d7d7d7;
 }
 .label{
     text-transform: uppercase;
-    color: blue;
+    color: #2297d8;
+}
 
+.subInfoList{
+    padding: .5rem 0 1rem .5rem;
+
+}
+.subInfoDetail{
+    margin: .3rem 0;
+    border-bottom: 1px dotted #d7d7d7;
+    padding: .2rem 0;
+}
+
+.paginationBox{
+    text-align: center;
+    margin: 2rem; 
+}
+.perPageBox{
+    margin-top:1rem;
+}
+.paginationBtn{
+    border:0;
+    background: transparent;
+    border: 1px solid black;
+    padding: .2rem .5rem;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: .3rem;
+    font-weight: bold;
+}
+.paginationBtn.active{
+    background: #2297d8;
+}
+.paginationBtn:hover{
+    background: #2297d8;
+}
+
+@media all and (min-width: 320px) and (max-width: 420px) {
+
+    html{
+        font-size: 14px!important;
+    }
+    .navList{
+        width: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+    .flagImg{
+        width: 10rem;
+    }
+
+    .home h1{
+        font-size: 2rem;
+        word-break: break-all;
+        white-space: normal;
+    }
 }

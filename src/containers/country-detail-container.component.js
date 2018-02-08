@@ -10,7 +10,7 @@ class CountryDetailsContainer extends Component {
     }
 
     render() {
-        if (!this.props.selectedCountry) return <p>Loading ...</p>
+        if (!this.props.selectedCountry.name) return <p>Loading ...</p>
         return (
             <CountryDetails country={this.props.selectedCountry} />
         );

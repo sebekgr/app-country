@@ -1,14 +1,16 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {getCountries, searchCountries, deleteCountry} from '../actions/actions-countries';
+import {getCountries, searchCountries, deleteCountry, getPagination, setCurrentPage, setPerPage} from '../actions/actions-countries';
 import CountryFLagList from '../presentational/flag-list.component';
+import Pagination from './pagination-container';
 
 
 class CountryFlagContainer extends Component {
 
     componentDidMount() {
+
         this.props.dispatch(getCountries());
-        this.props.dispatch(searchCountries(''));
+        this.props.dispatch(getPagination());
     }
 
     search(e) {
@@ -25,7 +27,8 @@ class CountryFlagContainer extends Component {
                 <div className="searchBox">
                     <input type="text" className="searchInput" onChange={this.search.bind(this)} placeholder="Search..."/>
                 </div>
-                <CountryFLagList countries={this.props.visibleCountries} deleteCountry={this.deleteCountry.bind(this)}/>
+                <Pagination />
+                <CountryFLagList countries={this.props.paginationData} deleteCountry={this.deleteCountry.bind(this)}/>
             </div>
         );
     }
@@ -33,8 +36,10 @@ class CountryFlagContainer extends Component {
 
 const mapStateToProps = store => {
     return {
-        countries: store.countriesReducer.countries,
-        visibleCountries: store.countriesReducer.visibleCountries
+        visibleCountries: store.countriesReducer.visibleCountries,
+        paginationData: store.countriesReducer.paginationData,
+        perPage: store.countriesReducer.perPage,
+        currentPage: store.countriesReducer.currentPage
     };
 };
 
